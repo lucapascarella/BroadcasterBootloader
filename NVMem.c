@@ -36,11 +36,11 @@
  * $Name: $
  *
  **********************************************************************/
-#include "Include\HardwareProfile\HardwareProfile.h"
-#include "Include\GenericTypeDefs.h"
-#include "Include\BootLoader.h"
-#include "Include\Framework\Framework.h"
-#include "Include\NVMem.h"
+#include "Include/HardwareProfile/HardwareProfile.h"
+#include "Include/GenericTypeDefs.h"
+#include "Include/BootLoader.h"
+#include "Include/Framework/Framework.h"
+#include "Include/NVMem.h"
 #include <plib.h>
 
 
