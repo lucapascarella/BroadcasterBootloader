@@ -5398,7 +5398,7 @@ BOOL _USB_TransferInProgress( void )
 #if defined(__C30__)
 void __attribute__((__interrupt__, no_auto_psv)) _USB1Interrupt( void )
 #elif defined(__PIC32MX__)
-void __ISR(_USB_1_VECTOR, ipl4) _USB1Interrupt(void)
+void __ISR(_USB_1_VECTOR, IPL4AUTO) _USB1Interrupt(void)
 #else
     #error Cannot define timer interrupt vector.
 #endif

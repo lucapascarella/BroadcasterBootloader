@@ -55,7 +55,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>RealICEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>1.43</languageToolchainVersion>
+        <languageToolchainVersion>1.44</languageToolchainVersion>
         <platform>4</platform>
       </toolsSet>
       <compileType>
@@ -66,6 +66,21 @@
         <archiverTool>
         </archiverTool>
         <loading>
+          <makeArtifact PL="../BroadcasterEth"
+                        CT="1"
+                        CN="Production"
+                        AC="false"
+                        BL="true"
+                        WD="../BroadcasterEth"
+                        BC="${MAKE}  -f Makefile CONF=Production"
+                        DBC="${MAKE}  -f Makefile CONF=Production TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/Production&quot; &quot;dist/Production&quot;"
+                        OP="dist/Production/production/BroadcasterEth.production.hex"
+                        DOP="dist/Production/debug/BroadcasterEth.debug.elf"
+                        FL="dist/Production/production/BroadcasterEth.production.hex"
+                        PD="dist/Production/production/BroadcasterEth.production.elf"
+                        DD="dist/Production/debug/BroadcasterEth.debug.elf">
+          </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>true</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
@@ -92,16 +107,16 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
                   value=".;Include;Include\HardwareProfile"/>
-        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-16-bit-code" value="true"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>
         <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="optimization-level" value="-Os"/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="preprocessor-macros"
-                  value="TRANSPORT_LAYER_USB_HOST;_SUPPRESS_PLIB_WARNING"/>
+                  value="TRANSPORT_LAYER_USB_HOST;_SUPPRESS_PLIB_WARNING;_DISABLE_OPENADC10_CONFIGPORT_WARNING"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
@@ -123,14 +138,15 @@
         <property key="false-conditionals" value="false"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="keep-locals" value="false"/>
+        <property key="keep-locals" value="true"/>
         <property key="list-assembly" value="false"/>
         <property key="list-source" value="false"/>
         <property key="list-symbols" value="false"/>
         <property key="oXC32asm-list-to-file" value="false"/>
         <property key="omit-debug-dirs" value="false"/>
         <property key="omit-forms" value="false"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros"
+                  value="_DISABLE_OPENADC10_CONFIGPORT_WARNING"/>
         <property key="warning-level" value=""/>
       </C32-AS>
       <C32-LD>
